@@ -1,0 +1,9 @@
+security_groups: ['public-dynamic', 'launch-wizard-1']  # could make our own; first is for 8080; second is for 22
+instance_type: t2.medium                                # magnolia doesn't seem to run well at 'micro' and small won't handle two webapps
+image: ami-846e4ce1                                     # this is an AMI created just for trainings; it has author + public that start on creation / boot
+wait: yes                                               # wait until the ports, like 22, are listening, before ready
+region: us-east-2                                       # doesn't really matter probably
+keypair: bda-aws-unconf2017                             # this should be yours ...
+count: 1                                                # how many trainees you got, bro?
+vpc_subnet_id: subnet-be6afdd7                          # required if using 'assign_public_ip'
+assign_public_ip: yes                                   # you want them to be able to easily access it?

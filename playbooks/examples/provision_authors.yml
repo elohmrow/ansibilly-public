@@ -1,0 +1,17 @@
+# ansible-playbook playbooks/examples/provision_authors.yml -i hosts --ask-vault-pass
+
+  - name: Provision an EC2 instance(s) for Magnolia author instance(s)
+    hosts: authors
+    connection: local
+    gather_facts: False
+    tags: provisioning
+
+    # Encrypted variables for AWS access
+    vars_files:
+      - bda-vars.yml
+
+    # Tasks to create EC2 instance given an established AMI
+    tasks:
+      - name: include variables
+        include_vars: vars.yml
+      - include: provision_author.yml

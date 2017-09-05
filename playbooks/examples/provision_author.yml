@@ -1,0 +1,14 @@
+- name: Launch a new EC2 instance for Magnolia
+  local_action: ec2
+                aws_access_key={{ magnolia_aws_access_key }}
+                aws_secret_key={{ magnolia_aws_secret_key }}
+                groups={{ security_groups }}
+                instance_type={{ instance_type }}
+                image={{ image }}
+                wait={{ wait }} 
+                region={{ region }}
+                keypair={{ keypair }}
+                count={{ count }}
+                vpc_subnet_id={{ vpc_subnet_id }}
+                assign_public_ip={{ assign_public_ip }}
+  register: ec2

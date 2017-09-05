@@ -1,0 +1,3 @@
+* [create_training_instances.sh] is a script to do everything for you.  You'll need ansible and some aws keys to run it.
+
+You don't have to use it.  You just need to have the right files in the right places otherwise.  

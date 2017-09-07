@@ -1,0 +1,9 @@
+all you have to do is:
+	./install_magnolia.sh
+and it will:
+	- download the most recent magnolia
+	- download tomcat 
+	- download the most recent author training light modules
+	- set some magnolia.properties
+	- put a magnoliaAuthor and a magnoliaPublic in tomcat's webapps
+	- start tomcat => start magnolia

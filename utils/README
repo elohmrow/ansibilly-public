@@ -5,5 +5,10 @@ and it will:
 	- download tomcat 
 	- download the most recent author training light modules
 	- set some magnolia.properties
+	- use author-bootstraps-1.0-SNAPSHOT.jar to do some bootstrapping:
+		- change superuser password
+		- disable common users
+		- create new training user
+		- add training license
 	- put a magnoliaAuthor and a magnoliaPublic in tomcat's webapps
 	- start tomcat => start magnolia

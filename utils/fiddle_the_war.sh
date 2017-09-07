@@ -25,6 +25,10 @@ echo "magnolia.resources.dir=/home/ec2-user/training-author-project" >> WEB-INF/
 # edit magnolia.properties to auto-install the modules:
 echo "magnolia.update.auto=true" >> WEB-INF/config/default/magnolia.properties
 
+# add bootstraps:
+cp /home/ec2-user/author-bootstraps-1.0-SNAPSHOT.jar WEB-INF/lib/ 
+# ^ change superuser password, disable common users, add training user, add license
+
 # re-package the war file:
 jar cf magnoliaAuthor.war *
 

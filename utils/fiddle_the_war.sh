@@ -18,7 +18,7 @@ jar xf magnoliaAuthor.war
 rm -f magnoliaAuthor.war
 
 # edit magnolia.properties to point to the author training light modules:
-echo "magnolia.resources.dir=/home/ec2-user/training-author-project" >> WEB-INF/config/default/magnolia.properties
+echo "magnolia.resources.dir=/home/ec2-user/training-author-project/light-modules" >> WEB-INF/config/default/magnolia.properties
 # ^ this could be paramterized instead of hardcoded
 # ^ alternatively, sed the line, but, order of read properties should mean this is OK
 
@@ -27,7 +27,8 @@ echo "magnolia.update.auto=true" >> WEB-INF/config/default/magnolia.properties
 
 # add bootstraps:
 cp /home/ec2-user/author-bootstraps-1.0-SNAPSHOT.jar WEB-INF/lib/ 
-# ^ change superuser password, disable common users, add training user, add license
+# ^ change superuser password, disable common users, add training user, #add license
+#cp /home/ec2-user/config.modules.enterprise.license.xml WEB-INF/bootstrap/common/ 
 
 # re-package the war file:
 jar cf magnoliaAuthor.war *

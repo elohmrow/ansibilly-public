@@ -11,10 +11,10 @@
 if [ -d training-author-project ]; then rm -rf training-author-project; fi
 git clone ssh://git@git.magnolia-cms.com/training/training-author-project.git
 
-# [3] get the most recent author training instance creation code:
-if [ -d training-author-instances-creation ]; then rm -rf training-author-instances-creation; fi
-git clone ssh://git@git.magnolia-cms.com/training/training-author-instances-creation.git
-# ^ this is overkill, could be done better
+#### [3] get the most recent author training instance creation code:
+###if [ -d training-author-instances-creation ]; then rm -rf training-author-instances-creation; fi
+###git clone ssh://git@git.magnolia-cms.com/training/training-author-instances-creation.git
+#### ^ this is overkill, could be done better
 
 # [4] fiddle the war:
 ./fiddle_the_war.sh
@@ -24,4 +24,5 @@ cp magnoliaAuthor.war magnoliaPublic.war
 mv *.war apache-tomcat-8.5.20/webapps/ 
 
 # [6] start tomcat, which will start magnolia:
-./apache-tomcat-8.5.20/bin/catalina.sh start && tail -f apache-tomcat-8.5.20/logs/catalina.out
+#./apache-tomcat-8.5.20/bin/catalina.sh start && tail -f apache-tomcat-8.5.20/logs/catalina.out
+./apache-tomcat-8.5.20/bin/catalina.sh start &

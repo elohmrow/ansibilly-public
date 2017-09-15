@@ -1,6 +1,6 @@
 security_groups: ['public-dynamic', 'launch-wizard-1']  # could make our own; first is for 8080; second is for 22
 instance_type: t2.medium                                # magnolia doesn't seem to run well at 'micro' and small won't handle two webapps
-image: ami-64ecce01                                     # this is an AMI created just for trainings; it has author + public that start on creation / boot
+image: ami-85eccee0                                     # this is an AMI created just for trainings; it has author + public that start on creation / boot
 wait: yes                                               # wait until the ports, like 22, are listening, before ready
 region: us-east-2                                       # doesn't really matter probably
 keypair: bda-aws-unconf2017                             # this should be yours ...

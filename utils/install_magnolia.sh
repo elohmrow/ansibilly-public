@@ -35,9 +35,3 @@ mv *.war apache-tomcat-8.5.20/webapps/
 logger "=================================================="
 logger "========== moved the magnolia war files =========="
 logger "=================================================="
-
-# [5] start tomcat, which will start magnolia:
-./apache-tomcat-8.5.20/bin/catalina.sh start && tail -f apache-tomcat-8.5.20/logs/catalina.out
-logger "===================================="
-logger "========== started tomcat =========="
-logger "===================================="

@@ -23,7 +23,11 @@ function get_most_recent_magnolia {
 
 	rm -f files.html
 
-	wget -q -O magnoliaAuthor.war  https://files.magnolia-cms.com/${MAGNOLIA_VERSION}/magnolia-enterprise-pro-demo-webapp-${MAGNOLIA_VERSION}.war
+        # this command runs a lot slower under systemd
+        # default timeout for wget seems to be 900s
+        # if wget times out, the systemd unit eventually fails
+        # --timeout=0 means 'never timeout'
+	wget -q --timeout=0 -O magnoliaAuthor.war  https://files.magnolia-cms.com/${MAGNOLIA_VERSION}/magnolia-enterprise-pro-demo-webapp-${MAGNOLIA_VERSION}.war
 }
 date
 get_most_recent_magnolia

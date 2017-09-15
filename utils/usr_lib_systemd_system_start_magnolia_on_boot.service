@@ -5,9 +5,8 @@ After=local-fs.target network.target
 [Service]
 Type=forking
 User=ec2-user
-#WorkingDirectory="/home/ec2-user"
 ExecStart=/bin/sh -c "/home/ec2-user/thundercats.sh"
-TimeoutSec=300
+TimeoutSec=infinity
 
 [Install]
 WantedBy=default.target
